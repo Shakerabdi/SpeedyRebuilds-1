@@ -1,20 +1,41 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# SpeedyRebuilds Website
 
-# Run and deploy your AI Studio app
+Single-page marketing website for SpeedyRebuilds (React + Vite + TailwindCSS + Framer Motion).
 
-This contains everything you need to run your app locally.
+## Tech
 
-View your app in AI Studio: https://ai.studio/apps/drive/1TKNzHa-L4MuTDn2lEfENwCJP_Y_WaOwg
+- React 18
+- Vite
+- TailwindCSS
+- Framer Motion
+- lucide-react icons
 
-## Run Locally
+## Run locally
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev
+```
 
+## Build
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm run build
+npm run preview
+```
+
+## Customize
+
+- Colors and shared styles: `index.css`, `tailwind.config.cjs`
+- Main page structure: `App.tsx`
+- Section content: files in `components/`
+- Portfolio cards: `components/WorkSection.tsx`
+- Pricing tiers: `components/PricingSection.tsx`
+- FAQ items: `components/FAQSection.tsx`
+- Contact form behavior: `components/ContactSection.tsx`
+- Firebase submit logic: `lib/firebase.ts`
+
+## Notes
+
+- Contact form submits to Firestore via `submitLead`.
+- Ensure `.env.local` has valid Firebase values for production form submissions.

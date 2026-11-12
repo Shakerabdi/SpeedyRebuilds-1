@@ -1,0 +1,42 @@
+[
+  {
+    "service": "Website Design",
+    "previous": "",
+    "description": "Custom, mobile-friendly websites that explain your services, showcase your work and give visitors a clear way to contact you. Each project begins with an agreed scope, quote and timeline."
+  },
+  {
+    "service": "Website Redesign",
+    "previous": "",
+    "description": "Refresh or rebuild an existing website with clearer service information, mobile-friendly pages and easier contact options. We review the current site and agree on priorities, scope and timing before work begins."
+  },
+  {
+    "service": "Small Business Website Design",
+    "previous": "",
+    "description": "Websites for small businesses in Windsor-Essex and across Canada. Present your services, business details and examples of your work, with mobile-friendly pages and a clear contact form."
+  },
+  {
+    "service": "Responsive Web Design",
+    "previous": "",
+    "description": "Website layouts designed to work across phones, tablets and computers. We check navigation, text, images and contact forms so visitors can find information and reach your business from their device."
+  },
+  {
+    "service": "Website Hosting",
+    "previous": "",
+    "description": "Help connecting your domain, configuring website hosting and setting up a secure HTTPS connection. We explain the setup and any ongoing provider costs before you commit."
+  },
+  {
+    "service": "Search Engine Optimization (SEO)",
+    "previous": "",
+    "description": "SEO essentials including page titles, descriptions, clear page structure and relevant content, so search engines can better understand your website. Local business details and Google Business Profile guidance are available."
+  },
+  {
+    "service": "Website Maintenance",
+    "previous": "",
+    "description": "Ongoing website support with small content updates, website checks and performance reviews. We agree on the care plan, included work and ongoing costs based on the support your website needs."
+  },
+  {
+    "service": "Landing Page Design",
+    "previous": "",
+    "description": "Focused, mobile-friendly pages for a specific service, offer or campaign. Clear messaging and a relevant inquiry form give visitors a simple next step. Scope and goals are agreed before design begins."
+  }
+]

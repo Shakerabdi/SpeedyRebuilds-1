@@ -1,54 +1,71 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpeedyRebuilds | Modernize Your Outdated Website</title>
-    <meta name="description" content="We rebuild outdated websites into fast, modern machines that convert. Free audits available.">
-    <!-- OpenGraph Tags -->
-    <meta property="og:title" content="SpeedyRebuilds | Fast Website Modernization">
-    <meta property="og:description" content="Transform your slow, clunky site into a high-performance business tool.">
-    <meta property="og:type" content="website">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #0f172a;
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-        }
-        .hero-pattern {
-            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-    </style>
-    <script type="importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@18.2.0",
-        "react-dom": "https://esm.sh/react-dom@18.2.0",
-        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-        "framer-motion": "https://esm.sh/framer-motion@10.16.4?external=react,react-dom",
-        "lucide-react": "https://esm.sh/lucide-react@0.284.0?external=react,react-dom",
-        "firebase/app": "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js",
-        "firebase/firestore": "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/favicon.ico?v=sr-logo-2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/sr-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/sr-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icons/sr-512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/sr-apple-touch.png" />
+
+    <title>SpeedyRebuilds | Web Design in Windsor-Essex</title>
+    <link rel="canonical" href="https://speedyrebuilds.com/" />
+    <meta
+      name="description"
+      content="We build custom websites for businesses, creators, organizations, and personal projects. Web design, redesigns, and support in Windsor-Essex and beyond."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://speedyrebuilds.com/" />
+    <meta property="og:site_name" content="SpeedyRebuilds" />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="og:title" content="SpeedyRebuilds | Web Design in Windsor-Essex" />
+    <meta
+      property="og:description"
+      content="Websites for every business, brand, and big idea. We turn your goals into a polished online presence with thoughtful design and practical support."
+    />
+    <meta property="og:image" content="https://speedyrebuilds.com/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="SpeedyRebuilds — websites for businesses, creators, organizations, and personal projects" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://speedyrebuilds.com/#organization",
+            "name": "SpeedyRebuilds",
+            "url": "https://speedyrebuilds.com/",
+            "logo": "https://speedyrebuilds.com/sr-logo-horiz-light.png",
+            "email": "contact@speedyrebuilds.com",
+            "telephone": "+1-226-507-5802",
+            "areaServed": "Canada"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://speedyrebuilds.com/#website",
+            "url": "https://speedyrebuilds.com/",
+            "name": "SpeedyRebuilds",
+            "publisher": { "@id": "https://speedyrebuilds.com/#organization" },
+            "inLanguage": "en-CA"
+          }
+        ]
       }
-    }
     </script>
-</head>
-<body>
+
+    <meta name="theme-color" content="#eef4ff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-[Inter]">
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

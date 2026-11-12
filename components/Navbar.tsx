@@ -1,90 +1,112 @@
+import React, { useEffect, useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring } from 'framer-motion';
 
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+const links = [
+  { label: 'Services', href: '#services' },
+  { label: 'Work', href: '#work' },
+  { label: 'About', href: '#about' },
+  { label: 'Process', href: '#process' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '#contact' },
+];
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 180, damping: 35 });
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'Process', href: '#process' },
-    { name: 'Work', href: '#work' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'FAQ', href: '#faq' },
-  ];
-
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-    setIsOpen(false);
-  };
+  useEffect(() => {
+    if (!open) return;
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        document.querySelector<HTMLButtonElement>('[aria-controls="mobile-menu"]')?.focus();
+      }
+    };
+    document.addEventListener('keydown', onEscape);
+    return () => document.removeEventListener('keydown', onEscape);
+  }, [open]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="text-2xl font-extrabold tracking-tight text-slate-900">
-          Speedy<span className="text-blue-600">Rebuilds</span>
-        </a>
+    <header className="sticky top-0 z-50">
+      <a href="#main-content" className="skip-link">Skip to content</a>
+      {!reduceMotion && <motion.div className="page-progress" style={{ scaleX: progress }} aria-hidden="true" />}
+      <nav
+        className={`mx-auto mt-3 w-[min(96%,1280px)] rounded-2xl border transition-all ${
+          scrolled ? 'border-brand-border bg-brand-bg/95 shadow-soft backdrop-blur' : 'border-transparent bg-brand-bg'
+        }`}
+        aria-label="Main navigation"
+      >
+        <div className="flex items-center justify-between px-5 py-4 md:px-7">
+          <a href="#" className="focus-ring shrink-0 rounded-md" aria-label="SpeedyRebuilds home">
+            <img src="/sr-logo-horiz-light.png" alt="SpeedyRebuilds" width={2301} height={480} className="h-auto w-[204px] sm:w-[230px]" />
+          </a>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
-              {link.name}
+          <ul className="hidden items-center gap-4 lg:flex xl:gap-6">
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="nav-link text-sm text-brand-muted transition hover:text-brand-accent focus-ring rounded-md px-1 py-1">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="hidden lg:block">
+            <a href="#contact" className="btn-primary">
+              Let’s talk
             </a>
-          ))}
-          <button 
-            onClick={scrollToContact}
-            className="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-blue-200"
+          </div>
+
+          <button
+            type="button"
+            className="focus-ring grid min-h-[44px] min-w-[44px] place-items-center rounded-md p-2 lg:hidden"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
           >
-            Free Website Audit <ChevronRight size={16} />
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button className="md:hidden text-slate-900" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 md:hidden shadow-2xl"
-          >
-            <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href} 
-                  className="text-lg font-medium text-slate-900 hover:text-blue-600"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ))}
-              <button 
-                onClick={scrollToContact}
-                className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-center"
-              >
-                Get a Free Audit
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              id="mobile-menu"
+              initial={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: reduceMotion ? 1 : 0, y: reduceMotion ? 0 : -10 }}
+              transition={{ duration: reduceMotion ? 0 : 0.2 }}
+              className="rounded-b-2xl border-t border-brand-border bg-brand-bg px-5 pb-5 pt-3 lg:hidden"
+            >
+              <ul className="space-y-3">
+                {links.map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href} className="focus-ring block rounded-lg px-2 py-2 text-brand-muted hover:bg-brand-surface hover:text-brand-accent" onClick={() => setOpen(false)}>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact" className="btn-primary mt-4 block text-center" onClick={() => setOpen(false)}>
+                Start your project
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </header>
   );
 };
 

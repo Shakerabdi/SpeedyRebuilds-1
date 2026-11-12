@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeedyRebuilds | Digital Agency for Premium Website Rebuilds</title>
+    <meta name="description" content="SpeedyRebuilds is a modern digital agency rebuilding outdated sites into premium, conversion-first experiences.">
+    <meta property="og:title" content="SpeedyRebuilds | Digital Agency for Premium Rebuilds">
+    <meta property="og:description" content="Design, strategy, and engineering for high-performance business websites.">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #090d12;
+            --text: #ecf3ff;
+            --line: rgba(255, 255, 255, 0.12);
+            --brand-1: #22d3ee;
+            --brand-2: #34d399;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Syne', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-gradient {
+            background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
+        }
+
+        .brand-gradient-text {
+            background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid var(--line);
+            box-shadow: 0 24px 56px rgba(15, 23, 42, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-kicker {
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: #0e7490;
+            margin: 0;
+        }
+
+        .section-title {
+            margin-top: 0.7rem;
+            margin-bottom: 0;
+            font-size: clamp(1.9rem, 3.8vw, 3.4rem);
+            line-height: 1.03;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .ambient-grid {
+            background-image:
+              linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+            background-size: 48px 48px;
+            opacity: 0.45;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(72px);
+            opacity: 0.28;
+            background: radial-gradient(circle at 40% 40%, #22d3ee 0%, #2dd4bf 60%, transparent 72%);
+        }
+
+        .site-grid {
+            background-image:
+              linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+            background-size: 48px 48px;
+            opacity: 0.4;
+        }
+
+        .site-glow {
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(92px);
+            opacity: 0.33;
+            height: 20rem;
+            width: 20rem;
+        }
+
+        .site-glow-left {
+            left: -4rem;
+            top: -2rem;
+            background: radial-gradient(circle at 40% 40%, rgba(34, 211, 238, 0.55) 0%, rgba(34, 211, 238, 0.12) 55%, transparent 70%);
+        }
+
+        .site-glow-right {
+            right: -3rem;
+            top: 18rem;
+            background: radial-gradient(circle at 40% 40%, rgba(52, 211, 153, 0.46) 0%, rgba(52, 211, 153, 0.1) 55%, transparent 70%);
+        }
+
+        .dark-panel {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
+            border: 1px solid var(--line);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
+            backdrop-filter: blur(10px);
+        }
+
+        .dark-stat {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+        }
+
+        .dark-stat p {
+            margin: 0;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #9aa8bf;
+            font-weight: 700;
+        }
+
+        .dark-stat h3 {
+            margin: 0.45rem 0 0;
+            font-size: 2rem;
+            color: #f8fbff;
+            line-height: 1;
+            font-weight: 800;
+        }
+
+        .kicker-dark {
+            margin: 0;
+            color: #6ee7f9;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 800;
+            font-size: 0.72rem;
+        }
+
+        .title-dark {
+            margin: 0.75rem 0 0;
+            color: #f6fbff;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.02;
+        }
+
+        .gradient-ink {
+            background: linear-gradient(135deg, #6ee7f9 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.2.0",
+        "react-dom": "https://esm.sh/react-dom@18.2.0",
+        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+        "framer-motion": "https://esm.sh/framer-motion@10.16.4?external=react,react-dom",
+        "lucide-react": "https://esm.sh/lucide-react@0.284.0?external=react,react-dom",
+        "firebase/app": "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js",
+        "firebase/firestore": "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+</body>
+</html>
