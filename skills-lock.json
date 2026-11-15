@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "skills": {
+    "conquer-keyword": {
+      "source": "Shipper-dot-now/conqueror-skills",
+      "sourceType": "github",
+      "skillPath": "skills/conquer-keyword/SKILL.md",
+      "computedHash": "e1f8de5491e4dc2a858ed40cf0a1d256350f8ccf49f92f0908cc56c90c32cfe3"
+    },
+    "conqueror-competitive-landscape": {
+      "source": "Shipper-dot-now/conqueror-skills",
+      "sourceType": "github",
+      "skillPath": "skills/conqueror-competitive-landscape/SKILL.md",
+      "computedHash": "006cf5c56b4f70abfe41cc888b8c29ae2082a94a04c9c2fe7430ee240197836b"
+    },
+    "conqueror-competitor-analysis": {
+      "source": "Shipper-dot-now/conqueror-skills",
+      "sourceType": "github",
+      "skillPath": "skills/conqueror-competitor-analysis/SKILL.md",
+      "computedHash": "35066dfb39c65462eb0b72e7b1fd260c88f4ea660df737e97de069831c9ba443"
+    },
+    "conqueror-keyword-clustering": {
+      "source": "Shipper-dot-now/conqueror-skills",
+      "sourceType": "github",
+      "skillPath": "skills/conqueror-keyword-clustering/SKILL.md",
+      "computedHash": "c3d3aa43fc3fdc68b97c3b28c8d9616f18297570b1afabee9d3ca3b3b40e4a6b"
+    },
+    "conqueror-keyword-research": {
+      "source": "Shipper-dot-now/conqueror-skills",
+      "sourceType": "github",
+      "skillPath": "skills/conqueror-keyword-research/SKILL.md",
+      "computedHash": "d26e119d20e42322b386067067f31c996c69113facc63ef34d98ef681f38c753"
+    },
+    "conqueror-link-prospecting": {
+      "source": "Shipper-dot-now/conqueror-skills",
+      "sourceType": "github",
+      "skillPath": "skills/conqueror-link-prospecting/SKILL.md",
+      "computedHash": "02a50a9123b8f2c0004c645c6966504fbd6fcec56e850d0ab696140b6c88e26f"
+    },
+    "conqueror-seo-coach": {
+      "source": "Shipper-dot-now/conqueror-skills",
+      "sourceType": "github",
+      "skillPath": "skills/conqueror-seo-coach/SKILL.md",
+      "computedHash": "878161214f4361b34908a72fe1418c070f71c8ba155761744163acd747b46344"
+    },
+    "conqueror-seo-project-setup": {
+      "source": "Shipper-dot-now/conqueror-skills",
+      "sourceType": "github",
+      "skillPath": "skills/conqueror-seo-project-setup/SKILL.md",
+      "computedHash": "cb917b1f6fefc5f5add970d4cc5411935cbb9d1bc989a530e68633f80b500a40"
+    }
+  }
+}

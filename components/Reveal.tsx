@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import usePrefersReducedMotion from './usePrefersReducedMotion';
 
 type RevealProps = {
   children: React.ReactNode;
@@ -9,10 +10,10 @@ type RevealProps = {
 };
 
 const Reveal: React.FC<RevealProps> = ({ children, delay = 0, className, direction = 'up' }) => {
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = usePrefersReducedMotion();
 
   if (reduceMotion) {
-    return <div className={className}>{children}</div>;
+    return <div className={className} data-reveal="">{children}</div>;
   }
 
   return (

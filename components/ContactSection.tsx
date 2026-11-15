@@ -17,6 +17,7 @@ const ContactSection: React.FC = () => {
     wantsCall: true,
     hp: '',
   });
+  const isAudit = formData.serviceType === 'Free Website Audit';
 
   useEffect(() => {
     const selectService = (event: Event) => {
@@ -142,13 +143,14 @@ const ContactSection: React.FC = () => {
             </div>
 
             <div>
-              <label className="form-label" htmlFor="websiteUrl">Website address (optional)</label>
+              <label className="form-label" htmlFor="websiteUrl">{isAudit ? 'Website address to review' : 'Website address (optional)'}</label>
               <input
                 id="websiteUrl"
                 name="website"
                 autoComplete="url"
                 className="form-input"
                 type="url"
+                required={isAudit}
                 placeholder="https://"
                 value={formData.websiteUrl}
                 onChange={(e) => onChange('websiteUrl', e.target.value)}
@@ -175,11 +177,11 @@ const ContactSection: React.FC = () => {
             </div>
 
             <div>
-              <label className="form-label" htmlFor="message">Tell us about your website goals</label>
+              <label className="form-label" htmlFor="message">{isAudit ? 'What would you like us to look at? (optional)' : 'Tell us about your website goals'}</label>
               <textarea
                 id="message"
                 className="form-input min-h-[120px]"
-                required
+                required={!isAudit}
                 value={formData.message}
                 onChange={(e) => onChange('message', e.target.value)}
               />
@@ -215,7 +217,7 @@ const ContactSection: React.FC = () => {
               {status === 'loading' ? (
                 <span className="inline-flex items-center gap-2"><Loader2 size={16} className="animate-spin" /> Sending your request…</span>
               ) : (
-                'Send request'
+                isAudit ? 'Request my free audit' : 'Send request'
               )}
             </button>
           </form>

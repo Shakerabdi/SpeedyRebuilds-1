@@ -76,5 +76,15 @@ export const submitLeadAndSendEmail = async (leadData: Record<string, unknown>) 
     throw new Error('Unable to send lead email.');
   }
 
-  await submitLead(leadData);
+  const emailResult = await emailResponse.json();
+  if (emailResult.success !== true && emailResult.success !== 'true') {
+    throw new Error('The email service did not confirm delivery.');
+  }
+
+  // Once the email service accepts the request, a backup-storage failure must
+  // not tell the visitor to send it again and create a duplicate inquiry.
+  // A slow/offline Firestore connection must not hold up the confirmation either.
+  void submitLead(leadData).catch(() => {
+    console.warn('Lead email accepted; the Firestore backup could not be saved.');
+  });
 };
