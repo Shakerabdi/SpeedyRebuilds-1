@@ -4,6 +4,10 @@ import Reveal from './Reveal';
 
 const faqItems = [
   {
+    q: 'Do you only work with clients in Windsor-Essex?',
+    a: 'We are based in Windsor-Essex, Ontario, and serve clients in Windsor, Essex, Tecumseh, and Amherstburg. We also work remotely with businesses, creators, and organizations across Canada. Local in-person meetings are available by appointment.',
+  },
+  {
     q: 'What should we have ready before getting started?',
     a: 'A short description of your goals, a few websites you like, and any existing logo, photos, or written content are helpful. You do not need everything ready for our first conversation. We will agree on what is needed as part of your project plan.',
   },

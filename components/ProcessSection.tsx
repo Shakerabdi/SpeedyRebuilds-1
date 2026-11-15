@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ClipboardCheck, Palette, Code2, Rocket, ArrowUpRight } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import usePrefersReducedMotion from './usePrefersReducedMotion';
 import Reveal from './Reveal';
 
 const steps = [
@@ -11,7 +12,7 @@ const steps = [
 ];
 
 const ProcessSection: React.FC = () => {
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = usePrefersReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const [activeStep, setActiveStep] = useState(0);
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import HeroBackgroundVideo from './HeroBackgroundVideo';
 import useSceneMotion from './useSceneMotion';
+import ProjectLink from './ProjectLink';
 
 const features = [
   { label: 'Your brand', value: 'A distinct look' },
@@ -30,10 +31,10 @@ const HeroSection: React.FC = () => {
               Web design in Windsor-Essex and beyond
             </p>
             <h1 id="hero-heading" className="text-balance text-4xl font-semibold leading-tight text-white md:text-5xl xl:text-6xl">
-              Websites for every <span className="hero-title-light">business, brand, and big idea.</span>
+              Web design in Windsor-Essex. <span className="hero-title-light">Built around your goals.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-100">
-              We build websites that make a great first impression and connect you with your audience. From businesses and personal brands to portfolios and community projects, we turn your ideas into a polished online presence.
+              SpeedyRebuilds designs and rebuilds mobile-friendly websites for businesses, creators, and organizations. Work with a Windsor-Essex web developer who helps you explain what you offer and makes it easy for visitors to get in touch, locally or anywhere in Canada.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -58,6 +59,9 @@ const HeroSection: React.FC = () => {
                 <li>Get practical ideas for your design, content, and navigation</li>
                 <li>Decide whether to refresh your site or start again</li>
               </ul>
+              <ProjectLink service="Free Website Audit" className="mt-4 inline-flex min-h-[44px] items-center gap-2 rounded text-sm font-medium text-blue-100 underline decoration-blue-200/50 underline-offset-4 focus-ring">
+                Request your free website audit <ArrowRight size={16} aria-hidden="true" />
+              </ProjectLink>
             </div>
           </div>
         </div>

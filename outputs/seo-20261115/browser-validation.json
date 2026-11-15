@@ -1,0 +1,19 @@
+{
+  "result": "passed",
+  "checks": [
+    "HTML includes rendered page content",
+    "one H1",
+    "internal fragment links resolve",
+    "metadata and JSON-LD",
+    "desktop and mobile hydration",
+    "audit CTA selects service",
+    "audit URL required and message optional",
+    "mocked success clears form",
+    "mocked failure preserves form",
+    "mobile menu and overflow",
+    "JavaScript-disabled content remains visible",
+    "normal-motion hydration and reveal",
+    "font fallback when external fonts are unavailable"
+  ],
+  "screenshots": "/Users/hubby/Downloads/SpeedyRebuilds-1-main/outputs/seo-20261115"
+}

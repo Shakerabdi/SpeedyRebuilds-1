@@ -306,6 +306,7 @@
   .project-preview { isolation: isolate; padding: 2rem 1.5rem; background: #0f1d36; }
   .project-preview-cafe { background: radial-gradient(ellipse at 35% 25%, #524366, transparent 75%), #19213b; }
   .project-preview-williams { background: radial-gradient(ellipse at 35% 25%, #244874, transparent 75%), #101f39; }
+  .project-preview-perspektive { background: radial-gradient(ellipse at 70% 20%, #78613b, transparent 75%), #1a2831; }
   .project-stage-light { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 35%, rgba(191,219,254,.25), transparent 65%); transform: translate3d(var(--scene-px, 0px), var(--scene-py, 0px), 0); pointer-events: none; }
   .project-stage-grid { position: absolute; left: -50%; bottom: -18%; width: 200%; height: 60%; background-image: linear-gradient(rgba(147,197,253,.15) 1px, transparent 1px), linear-gradient(90deg, rgba(147,197,253,.15) 1px, transparent 1px); background-size: 38px 38px; transform: perspective(500px) rotateX(65deg); mask-image: linear-gradient(transparent, #000); pointer-events: none; }
   .project-browser { z-index: 1; box-shadow: 0 25px 45px rgba(0,0,0,.4), 0 0 0 1px rgba(219,234,254,.18); }

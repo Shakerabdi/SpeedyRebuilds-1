@@ -27,7 +27,7 @@ const services: Service[] = [
     icon: ClipboardCheck,
   },
   {
-    title: 'Website rebuilds',
+    title: 'Website redesigns and rebuilds',
     requestValue: 'Website Refresh',
     description: 'We give outdated websites a fresh direction, with a clearer message, updated design, and a better experience for the people using them.',
     bullets: ['A fresh look and stronger content', 'Performance and usability improvements', 'Guidance from planning to launch'],
@@ -62,9 +62,9 @@ const ServicesSection: React.FC = () => {
       <div className="container-custom">
       <Reveal>
         <p className="eyebrow">Services</p>
-        <h2 className="section-title">Your ideas. Our design and development.</h2>
+        <h2 className="section-title">Website design, rebuilds, and ongoing support.</h2>
         <p className="mt-4 max-w-2xl text-brand-muted">
-          We bring design, content, and technology together to create a website that feels like you and works for your audience.
+          From a new business website to a redesign or campaign landing page, we bring design, content, and technology together for clients in Windsor-Essex and across Canada.
         </p>
       </Reveal>
 

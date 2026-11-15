@@ -10,10 +10,15 @@ const featuredProjects = [
     url: 'https://cafevelora.ca/',
     domain: 'cafevelora.ca',
     image: '/cafe-velora-preview.jpg',
+    imageAlt: 'Café Velora homepage featuring its coffee cart, purple branding, and event inquiry link',
+    imageWidth: 1440,
+    imageHeight: 1000,
+    previewClass: 'project-preview-cafe',
     screenshot: true,
     summary: 'Mobile coffee and matcha for weddings, corporate events, and celebrations in Windsor-Essex.',
     description:
       'A custom website for a mobile coffee and matcha cart in Windsor-Essex. The site brings together a signature drink menu, event packages, original photography, and an easy-to-use inquiry form.',
+    focus: 'Bring the café experience online and make event inquiries simple.',
     highlights: [
       'A signature drink menu and clear event options',
       'A photo gallery that captures the café experience',
@@ -27,16 +32,41 @@ const featuredProjects = [
     url: 'https://williamsplumbingservices.ca/',
     domain: 'williamsplumbingservices.ca',
     image: '/williams-plumbing-preview.jpg',
+    imageAlt: 'Williams Plumbing Services website preview',
+    previewClass: 'project-preview-williams',
     screenshot: false,
     summary: 'A plumbing website with clear service information, customer reviews, project photos, and easy ways to get in touch.',
     description:
       'A modern website for a plumbing company serving Kitchener-Waterloo. Clear service pages, customer reviews, and project photos help visitors learn about the business and request service.',
+    focus: 'Make plumbing services easy to explore and help visitors get in touch.',
     highlights: [
       'Clear information on residential and commercial services',
       'Simple service requests and tap-to-call links',
       'Local search setup, customer reviews, and project photos',
     ],
     stats: ['Live client site', 'Kitchener-Waterloo', 'Easy service requests'],
+  },
+  {
+    name: 'Perspektive Morgen',
+    type: 'Live client project',
+    url: 'https://perspektivemorgen.de/',
+    domain: 'perspektivemorgen.de',
+    image: '/perspektive-morgen-preview.jpg',
+    imageAlt: 'Perspektive Morgen homepage with separate paths for job seekers and employers',
+    imageWidth: 1280,
+    imageHeight: 720,
+    previewClass: 'project-preview-perspektive',
+    screenshot: true,
+    summary: 'Staffing and recruitment connecting job seekers and employers in Kassel, Germany.',
+    description:
+      'A German-language website for a staffing and recruitment company in Kassel. Separate paths for applicants and employers bring together job listings, staffing services, and straightforward ways to apply or send an inquiry.',
+    focus: 'Help people find work and businesses find the right staff.',
+    highlights: [
+      'Separate journeys for job seekers and employers',
+      'Job listings and online applications',
+      'Clear staffing services and employer inquiries',
+    ],
+    stats: ['Live client site', 'Kassel, Germany', 'Staffing and recruitment'],
   },
 ];
 
@@ -47,7 +77,7 @@ const WorkSection: React.FC = () => {
         <p className="eyebrow">Work</p>
         <h2 className="section-title">Real projects. Thoughtful details.</h2>
         <p className="mt-4 max-w-2xl text-brand-muted">
-          Explore two websites we have built, with different audiences, identities, and ways to connect.
+          Explore websites we have built, with different audiences, identities, and ways to connect.
         </p>
       </Reveal>
 
@@ -59,7 +89,7 @@ const WorkSection: React.FC = () => {
                 href={featuredProject.url}
                 target="_blank"
                 rel="noreferrer"
-                className={`focus-ring project-preview group relative overflow-hidden lg:min-h-[460px] ${index === 0 ? 'project-preview-cafe' : 'project-preview-williams'}`}
+                className={`focus-ring project-preview group relative overflow-hidden lg:min-h-[460px] ${featuredProject.previewClass}`}
                 aria-label={`Open the ${featuredProject.name} website`}
               >
                 <div className="project-browser relative min-h-[320px] overflow-hidden rounded-2xl border border-brand-border bg-brand-bg shadow-soft">
@@ -75,9 +105,9 @@ const WorkSection: React.FC = () => {
                     <div>
                       <img
                         src={featuredProject.image}
-                        alt={`${featuredProject.name} homepage featuring its coffee cart, purple branding, and event inquiry link`}
-                        width={1440}
-                        height={1000}
+                        alt={featuredProject.imageAlt}
+                        width={featuredProject.imageWidth}
+                        height={featuredProject.imageHeight}
                         className="block h-auto w-full transition duration-700 group-hover:scale-[1.03]"
                         loading="lazy"
                       />
@@ -93,7 +123,7 @@ const WorkSection: React.FC = () => {
                     <div className="relative min-h-[270px] overflow-hidden">
                       <img
                         src={featuredProject.image}
-                        alt={`${featuredProject.name} website preview`}
+                        alt={featuredProject.imageAlt}
                         className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
                         loading="lazy"
                       />
@@ -121,7 +151,7 @@ const WorkSection: React.FC = () => {
                 <p className="project-kicker"><span>0{index + 1}</span> {featuredProject.type}</p>
                 <h3 className="mt-3 text-2xl font-semibold md:text-4xl">{featuredProject.name}</h3>
                 <p className="mt-4 text-brand-muted">{featuredProject.description}</p>
-                <p className="project-focus"><span>Project focus</span>{index === 0 ? 'Bring the café experience online and make event inquiries simple.' : 'Make plumbing services easy to explore and help visitors get in touch.'}</p>
+                <p className="project-focus"><span>Project focus</span>{featuredProject.focus}</p>
 
                 <ul className="mt-6 space-y-3 text-sm text-brand-muted">
                   {featuredProject.highlights.map((highlight) => (

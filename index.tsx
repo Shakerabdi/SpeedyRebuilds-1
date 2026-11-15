@@ -5,10 +5,14 @@ import './index.css';
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(
+  const app = (
     <React.StrictMode>
       <App />
     </React.StrictMode>
   );
+  if (rootElement.hasChildNodes()) {
+    ReactDOM.hydrateRoot(rootElement, app);
+  } else {
+    ReactDOM.createRoot(rootElement).render(app);
+  }
 }

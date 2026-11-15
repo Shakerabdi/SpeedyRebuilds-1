@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
+import usePrefersReducedMotion from './usePrefersReducedMotion';
 
 const links = [
   { label: 'Services', href: '#services' },
@@ -15,7 +16,7 @@ const links = [
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const reduceMotion = useReducedMotion();
+  const reduceMotion = usePrefersReducedMotion();
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 180, damping: 35 });
 

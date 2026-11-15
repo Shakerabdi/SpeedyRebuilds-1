@@ -36,9 +36,12 @@ const FounderSection: React.FC = () => {
         <Reveal>
           <div>
             <p className="eyebrow">Why SpeedyRebuilds</p>
-            <h2 className="section-title">A website partner who sees the bigger picture.</h2>
+            <h2 className="section-title">Your Windsor-Essex website partner, from idea to launch.</h2>
             <p className="mt-4 max-w-2xl text-brand-muted">
               We start by understanding what you want to share, who you want to reach, and what success looks like to you. Then we shape the design, content, and structure around those goals.
+            </p>
+            <p className="mt-4 max-w-2xl text-brand-muted">
+              Based in Windsor-Essex, Ontario, we work with clients in Windsor, Essex, Tecumseh, and Amherstburg. Local meetings are available by appointment, and remote consultations let us work with businesses and creators across Canada.
             </p>
           </div>
 
